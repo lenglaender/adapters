@@ -97,6 +97,7 @@ class VisionAdapterTestBase(AdapterTestBase):
 
         dataset_builder = datasets.load_dataset_builder("cifar10")
         dataset_builder.base_path = "tests_adapters/fixtures/samples/cifar10"
+        dataset_builder.download_and_prepare()
 
         dataset = dataset_builder.as_dataset(split="train")
         dataset = dataset.with_transform(transform)
